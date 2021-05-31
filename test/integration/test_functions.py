@@ -66,6 +66,7 @@ def display_gradient(display):
 
 def display_image_8bpp(display):
     img_path = 'images/sleeping_penguin.png'
+    #img_path = 'images/nier.bmp'
     print('Displaying "{}"...'.format(img_path))
 
     # clearing image to white

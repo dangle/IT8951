@@ -59,10 +59,11 @@ class AutoDisplay:
         Return the frame buf, rotated according to flip. Always returns a copy, even
         when rotate is None.
         '''
-        if self._rotate_method is None:
-            return self.frame_buf.copy()
 
-        return self.frame_buf.transpose(self._rotate_method)
+        if self._rotate_method is None:
+            return self.frame_buf.transpose(Image.FLIP_LEFT_RIGHT)
+
+        return self.frame_buf.transpose(Image.FLIP_LEFT_RIGHT).transpose(self._rotate_method)
 
     def _set_rotate(self, rotate):
 
